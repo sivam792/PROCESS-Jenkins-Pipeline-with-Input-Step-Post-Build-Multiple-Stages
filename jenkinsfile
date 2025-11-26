@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("code") {
+            steps {
+                echo "this is code stage"
+            }
+        }
+        stage("build") {
+            steps {
+                echo "this is code stage"
+            }
+        }
+        stage("deploy") {
+            input {
+                message "can i deploy"
+            }
+            steps {
+                echo "this is code stage"
+            }
+        }
+    }
+    post {
+        always {
+            echo "this will be printed any ways"
+        }
+    }
+}
